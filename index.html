@@ -19,37 +19,17 @@
             }
         }
 
-        .fade-in-1 {
+        .fade-in * {
             opacity: 0;
-            animation: fadeInAnimation ease 1s;
-            animation-delay: 0s;
-            animation-fill-mode: forwards;
         }
-
-        .fade-in-2 {
-            opacity: 0;
-            animation: fadeInAnimation ease 1s;
-            animation-delay: 0.5s;
-            animation-fill-mode: forwards;
-        }
-
-        .fade-in-3 {
-            opacity: 0;
-            animation: fadeInAnimation ease 1s;
-            animation-delay: 1s;
-            animation-fill-mode: forwards;
-        }
-
-        .fade-in-4 {
-            opacity: 0;
-            animation: fadeInAnimation ease 1s;
-            animation-delay: 1.5s;
-            animation-fill-mode: forwards;
+        
+        *.visible {
+            animation: fadeInAnimation 1s ease-out forwards;
         }
 
         hr {
             border: 0;
-            height: 2px;
+            height: 0.1rem;
             background-image: linear-gradient(to right, var(--background-color), var(--color), var(--background-color));
             margin: 50px 0;
         }
@@ -82,6 +62,47 @@
             font-style: italic;
             display: inline;
         }
+
+        @media (orientation: portrait) {
+            article.fade-in-1 {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <style>
+    .profile-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile-description, .profile-picture {
+        flex-basis: 40%;
+    }
+
+    .profile-picture figcaption {
+        text-align: right;
+    }
+
+    /* Responsive styling */
+    @media (orientation: portrait) {
+        .profile-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .profile-description, .profile-picture {
+            flex-basis: auto;
+            width: 100%;
+        }
+
+        .profile-picture figcaption {
+            text-align: center;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -96,12 +117,12 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <main class="container">
+    <main class="container fade-in">
         <div class="grid">
             <section>
-                <h1 id="about" class="fade-in-1 sticky">About Me</h1>
-                <article class="fade-in-1" style="display: flex; justify-content: space-between; align-items: center;">
-                    <div style="width: 40%;">
+                <h1 id="about" class="sticky">About Me</h1>
+                <article class="profile-content fade-in">
+                    <div class="profile-description">
                         <p>
                             I am a passionate software engineer with a knack for developing innovative solutions.
                             With a strong foundation in education and experience in various fields,
@@ -115,15 +136,15 @@
                             They say to go alone if you want to go fast, but go together if you want to go far.
                         </p>
                     </div>
-                    <figure style="width: 40%;">
+                    <figure class="profile-picture">
                         <img src="./docs/assets/me1.jpg" alt="profile picture"/>
-                        <figcaption style="text-align: right;">admiring a custom keyboard</figcaption>
+                        <figcaption>admiring a custom keyboard</figcaption>
                     </figure>
                 </article>
-
-                <hr class="fade-in-2"/>
-                <h1 id="skills" class="fade-in-2 sticky">My Skills</h1>
-                <article class="fade-in-2">
+                
+                <hr/>
+                <h1 id="skills" class="sticky">My Skills</h1>
+                <article>
                     <h3>Languages</h3>
                     <ul>
                         <li>
@@ -145,7 +166,7 @@
                     </h3>
                     <ul>
                         <li>
-                            <b>Back-End</b>:
+                            <h4>Back-End</h4>
                             <p>
                                 All the experience I acquired in my career has had back-end as the main focus, and I'm proud to say that I enjoyed every bit of it.
                                 I'm interested in how things work in the background and I'm always striving for scalability, readability and efficiency,
@@ -156,6 +177,7 @@
                                     <li>Node.js (I've developed API's)</li>
                                     <li>Python (I've developed API's and IoT Microservices)</li>
                                 </ul>
+                                <br/>
                                 I have worked with various database approaches and DBMS engines (Various SQL DBMS's, MongoDB, Redis, Neo4j).
                                 <ul>
                                     <li>SQL Server, SQLite, MySQL, MariaDB, Postgre</li>
@@ -166,16 +188,16 @@
                             </p>
                         </li>
                         <li>
-                            <b>Front-End</b>:
+                            <h4>Front-End</h4>
                         </li>
                         <li>
-                            <b>DevOps</b>:
+                            <h4>DevOps</h4>
                         </li>
                     </ul>
                 </article>
 
-                <hr class="fade-in-3"/>
-                <h1 id="projects" class="fade-in-3 sticky">Projects</h1>
+                <hr/>
+                <h1 id="projects" class="sticky">Projects</h1>
                 <p>
                     My portfolio showcases a variety of projects that demonstrate my ability to solve complex problems and implement scalable solutions.
                     From web applications to software tools, each project reflects my commitment to quality and innovation.
@@ -184,7 +206,7 @@
 
                 <h3>Ralex Tempus</h3>
                 <small>(.NET Blazor & MariaDB, hosted on a linux QNAP server, deployed with docker.)</small>
-                <article class="fade-in-3">
+                <article>
                     <p>
                         Tempus is a big .NET Blazor app, created for a steel construction company's needs. It manages construction projects by tracking various data points,
                         like time spent on tasks by each employee and materials used for each project.
@@ -276,5 +298,23 @@
             <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
         </small>
     </footer> -->
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Adjust as needed to trigger when 10% of the element is visible
+        });
+
+        const elements = document.querySelectorAll('.fade-in *');
+        elements.forEach(el => observer.observe(el));
+    });
+    </script>
+
 </body>
 </html>
