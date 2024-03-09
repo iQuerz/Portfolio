@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Nikola Rašić Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade-in-1 {
+            opacity: 0;
+            animation: fadeInAnimation ease 1s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+        }
+
+        .fade-in-2 {
+            opacity: 0;
+            animation: fadeInAnimation ease 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .fade-in-3 {
+            opacity: 0;
+            animation: fadeInAnimation ease 1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .fade-in-4 {
+            opacity: 0;
+            animation: fadeInAnimation ease 1s;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, var(--background-color), var(--color), var(--background-color));
+            margin: 50px 0;
+        }
+
+        nav, .sticky {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background-color: var(--background-color);
+        }
+
+        section > article {
+            margin-top: 0;
+        }
+
+        section > h1, section > h3, section > hgroup {
+            margin-bottom: 1rem;
+        }
+
+        section > h3 {
+            display: inline;
+        }
+
+        li img {
+            height: 3rem;
+        }
+
+        small {
+            font-size: 0.6rem;
+            font-style: italic;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Nikola Rašić</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <h1 id="about" class="fade-in-1 sticky">About Me</h1>
+                <article class="fade-in-1" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="width: 40%;">
+                        <p>
+                            I am a passionate software engineer with a knack for developing innovative solutions.
+                            With a strong foundation in education and experience in various fields,
+                            I have successfully delivered numerous projects that stand out for their creativity and technical excellence.
+                        </p>
+                        <p>
+                            I love the art of solving problems, no matter the difficulty, and programming has been a genuine enjoyment for me since my childhood.
+                        </p>
+                        <p>
+                            I'm a team player, as no one man has done anything great. I love working with the team, as one.
+                            They say to go alone if you want to go fast, but go together if you want to go far.
+                        </p>
+                    </div>
+                    <figure style="width: 40%;">
+                        <img src="./docs/assets/me1.jpg" alt="profile picture"/>
+                        <figcaption style="text-align: right;">admiring a custom keyboard</figcaption>
+                    </figure>
+                </article>
+
+                <hr class="fade-in-2"/>
+                <h1 id="skills" class="fade-in-2 sticky">My Skills</h1>
+                <article class="fade-in-2">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>
+                            <img src="./docs/assets/languages/cs.png" alt="C#"/> (including ASP.NET MVC, Razor & Blazor),
+                        </li>
+                        <li>
+                            <img src="./docs/assets/languages/javascript.png" alt="javascript"> (JQuery, React, Typescript),
+                        </li>
+                        <li>
+                            <img src="./docs/assets/languages/python.png" alt="python"> (Flask, pygame) and
+                        </li>
+                        <li>
+                            <img src="./docs/assets/languages/java.png" alt="java"> (Minecraft spigot plugins and mods, Apache Maven and NetBeans).
+                        </li>
+                    </ul>
+
+                    <h3>
+                        Areas of expertise
+                    </h3>
+                    <ul>
+                        <li>
+                            <b>Back-End</b>:
+                            <p>
+                                All the experience I acquired in my career has had back-end as the main focus, and I'm proud to say that I enjoyed every bit of it.
+                                I'm interested in how things work in the background and I'm always striving for scalability, readability and efficiency,
+                                achieving them through architectural means after negotiating the requirements with the clients,
+                                as well as daily thoughtful implementations of any functionalities.
+                                <ul>
+                                    <li>.NET (I've developed both API's and server-side rendered applications.)</li>
+                                    <li>Node.js (I've developed API's)</li>
+                                    <li>Python (I've developed API's and IoT Microservices)</li>
+                                </ul>
+                                I have worked with various database approaches and DBMS engines (Various SQL DBMS's, MongoDB, Redis, Neo4j).
+                                <ul>
+                                    <li>SQL Server, SQLite, MySQL, MariaDB, Postgre</li>
+                                    <li>Redis</li>
+                                    <li>MongoDB</li>
+                                    <li>Neo4J</li>
+                                </ul>
+                            </p>
+                        </li>
+                        <li>
+                            <b>Front-End</b>:
+                        </li>
+                        <li>
+                            <b>DevOps</b>:
+                        </li>
+                    </ul>
+                </article>
+
+                <hr class="fade-in-3"/>
+                <h1 id="projects" class="fade-in-3 sticky">Projects</h1>
+                <p>
+                    My portfolio showcases a variety of projects that demonstrate my ability to solve complex problems and implement scalable solutions.
+                    From web applications to software tools, each project reflects my commitment to quality and innovation.
+                    There's many more equally good projects than this, as I have hand-picked just a few worthy ones to showcase.
+                </p>
+
+                <h3>Ralex Tempus</h3>
+                <small>(.NET Blazor & MariaDB, hosted on a linux QNAP server, deployed with docker.)</small>
+                <article class="fade-in-3">
+                    <p>
+                        Tempus is a big .NET Blazor app, created for a steel construction company's needs. It manages construction projects by tracking various data points,
+                        like time spent on tasks by each employee and materials used for each project.
+                        It then uses all of this data to give the users a detailed breakdown of project costs,
+                        as well as answering the question of "Who did what, when & where",
+                        offering a cost prediction for future projects and by result, increasing the company's throughput.
+                    </p>
+                    <p>
+                        I have designed and developed it by myself & It is being actively used in my Dad's steel construction company.
+                        I do not have any compensation for this as I did it solely in my free time, out of my love for software engineering.
+                    </p>
+                    <!-- <figure>
+                        <img src="https://source.unsplash.com/random/640x360?technology" alt="Project picture" />
+                        <figcaption>Ralex Tempus main page</figcaption>
+                    </figure> -->
+                </article>
+
+                <h3>Kviziram</h3>
+                <small>(Node.js, React.js, Neo4J & Redis, )</small>
+                <article>
+                    <p> "Kviziram", wordplay on Serbian "Kriziram", is a quizzing platform allowing players to connect as friends, create and play together. </p>
+                    <!-- <figure>
+                        <img src="https://source.unsplash.com/random/640x360?technology" alt="Project picture" />
+                        <figcaption>Ralex Tempus main page</figcaption>
+                    </figure> -->
+                </article>
+
+                
+                <h3>Ralex ReMIND</h3>
+                <small>(ASP.NET MVC with JQuery & SQLite, hosted on a windows machine, deployed on IIS)</small>
+                <article>
+                    <p>
+                        ReMIND system is a highly functional calendar for enterprise use.
+                        It tracks credits, payments, meetings, car technical inspections etc.
+                        They all come with notifications and reminders, hence the name.
+                        All reminders are highly customizable.
+                        It's a combination of a standalone API and a companion web app, 
+                        and it supports adding custom categories/subcategories to the database, so any type of event can be tracked and reminded about.
+                    </p>
+                    
+                    <p>
+                        I have designed and developed it by myself & It is being actively used in my Dad's steel construction company.
+                        I do not have any compensation for this as I did it solely in my free time, out of my love for software engineering.
+                    </p>
+                </article>
+
+                
+                <h3>RTOG</h3>
+                <small>(ASP.NET MVC, JQuery, SQLite)</small>
+                <article>
+                    <p>
+                        Short for "Risk Type Of a Game", it was developed to showcase architectural skills.
+                        It's a game 
+                        The project is following "Clean" architecutre for web apps and is divided into three layers.
+                        It implements various design patterns: Decorator, Observer, Singleton, Command, Dependency Injection etc.
+                    </p>
+                    <figure>
+                        
+                    </figure>
+                </article>
+
+                <hr class="fade-in-4"/>
+                <h1 class="fade-in-4 sticky">Hobbies</h1>
+                <article class="fade-in-4">
+                    <p>my hobbies</p>
+                </article>
+            </section>
+        </div>
+    </main>
+    <section id="contact">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>Let's Connect</h2>
+                    <h3>Contact me</h3>
+                </hgroup>
+                <div style="display: flex;justify-content: space-around; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.linkedin.com/in/rasicdnikola/" target="_blank" rel="noopener noreferrer">LinkedIn</i></a>
+                    <a href="https://github.com/iQuerz" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="mailto:rasicdnikola@gmail.com">rasicdnikola@gmail.com</a>
+                    <a href="https://www.youtube.com/@iquerz" target="_blank" rel="noopener noreferrer">My youtube channel</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- <footer class="container">
+        <small>
+            <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
+        </small>
+    </footer> -->
+</body>
+</html>
